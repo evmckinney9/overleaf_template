@@ -1,0 +1,18 @@
+\usepackage{xcolor}
+\usepackage{ifthen}
+\usepackage{mathabx}
+\newboolean{showcomments}
+\setboolean{showcomments}{true}
+\ifthenelse{\boolean{showcomments}}
+{ \newcommand{\mynote}[3]{
+     \fbox{\bfseries\sffamily\scriptsize#1}
+        {\small$\blacktriangleright$\textsf{\emph{\color{#3}{#2}}}$\blacktriangleleft$}}}
+{ \newcommand{\mynote}[3]{}}
+% One command per author:
+\definecolor{asparagus}{rgb}{.25, .65, .20}
+\newcommand{\evm}[1]{\mynote{EVM}{#1}{asparagus}}
+\newcommand{\iy}[1]{\mynote{IY}{#1}{magenta}}
+\newcommand{\mjh}[1]{\mynote{MJH}{#1}{red}}
+\newcommand{\akj}[1]{\mynote{AKJ}{#1}{blue}}
+\newcommand{\cz}[1]{\mynote{CZ}{#1}{orange}}
+\newcommand{\GF}[1]{\mynote{GF}{#1}{purple}}

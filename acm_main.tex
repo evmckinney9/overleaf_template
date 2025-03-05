@@ -1,0 +1,96 @@
+\documentclass[sigconf, screen, authorversion, nonacm, authordraft]{acmart}
+% \documentclass[sigconf, screen, authorversion, nonacm]{acmart}
+
+\title{ACM Overleaf Template}
+
+% Authors
+\author{Evan McKinney}
+\email{evm33@pitt.edu}
+\orcid{0000-0002-4865-5458}
+\affiliation{%
+  \institution{University of Pittsburgh}
+  \city{Pittsburgh}
+  \state{Pennsylvania}
+  \country{USA}
+}
+
+\author{Alice Johnson}
+\email{alice.johnson@example.com}
+\orcid{0000-0001-2345-6789}
+\affiliation{%
+  \institution{Massachusetts Institute of Technology}
+  \city{Cambridge}
+  \state{Massachusetts}
+  \country{USA}
+}
+
+\author{Bob Williams}
+\email{bob.williams@example.edu}
+\orcid{0000-0002-9876-5432}
+\affiliation{%
+  \institution{University of California, Berkeley}
+  \city{Berkeley}
+  \state{California}
+  \country{USA}
+}
+
+\author{Carlos García}
+\email{carlos.garcia@example.edu}
+\orcid{0000-0003-5678-1234}
+\affiliation{%
+  \institution{Yale University}
+  \city{New Haven}
+  \country{USA}
+}
+
+\author{Danielle Smith}
+\email{danielle.smith@example.ac.uk}
+\orcid{0000-0004-4567-7890}
+\affiliation{%
+  \institution{University of Oxford}
+  \city{Oxford}
+  \country{United Kingdom}
+}
+
+\author{Emily Chen}
+\email{emily.chen@example.cn}
+\orcid{0000-0005-7890-2345}
+\affiliation{%
+  \institution{Tsinghua University}
+  \city{Beijing}
+  \country{China}
+}
+
+\renewcommand{\shortauthors}{McKinney et al.}
+
+\input{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+   <concept>
+       <concept_id>10010583.10010786.10010813.10011726</concept_id>
+       <concept_desc>Hardware~Quantum computation</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+ </ccs2012>
+\end{CCSXML}
+\ccsdesc[500]{Hardware~Quantum computation}
+\keywords{Quantum computing, quantum architecture}
+
+\input{macros/preamble}
+\input{macros/comments}
+\begin{document}
+
+\maketitle
+
+\input{chapters/intro}
+
+\begin{acks}
+This work is partially supported by The Charles E. Kaufman Foundation of The Pittsburgh Foundation under New Initiative Award KA2022-129519 and by the Army Research Office under Grants No. W911NF2310253. The views and conclusions contained in this document are those of the authors and should be interpreted as representing official policies, either expressed or implied, of the Army Research Office or the US Government. The US Government is authorized to reproduce and distribute reprints for government purposes notwithstanding any copyright notation herein.
+\end{acks}
+
+\bibliographystyle{ACM-Reference-Format}
+\nocite{*}
+\bibliography{refs}
+
+\end{document}

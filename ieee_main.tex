@@ -1,0 +1,38 @@
+\documentclass[10pt,conference]{IEEEtran}
+
+\title{IEEE Overleaf Template}
+
+% Authors
+\author{
+    Evan McKinney$^{1}$, Alice Johnson$^{2}$, Bob Williams$^{3}$ \\ 
+    $^{1}$University of Pittsburgh, Pittsburgh, PA, USA\\
+    $^{2}$Massachusetts Institute of Technology, Cambridge, MA, USA\\
+    $^{3}$University of California, Berkeley, Berkeley, CA, USA\\
+    evm33@pitt.edu, alice.johnson@example.com, bob.williams@example.edu
+}
+
+\usepackage{graphicx} % avoid this in preamble.tex since already in acm
+\input{macros/preamble}
+\input{macros/comments}
+
+\begin{document}
+
+\maketitle
+
+\input{abstract}
+
+\begin{IEEEkeywords}
+Quantum computing, quantum architecture
+\end{IEEEkeywords}
+
+
+\input{chapters/intro}
+
+\section*{Acknowledgments}
+This work is partially supported by The Charles E. Kaufman Foundation of The Pittsburgh Foundation under New Initiative Award KA2022-129519 and by the Army Research Office under Grants No. W911NF2310253. The views and conclusions contained in this document are those of the authors and should be interpreted as representing official policies, either expressed or implied, of the Army Research Office or the US Government. The US Government is authorized to reproduce and distribute reprints for government purposes notwithstanding any copyright notation herein.
+
+\bibliographystyle{IEEEtran}
+\nocite{*}
+\bibliography{refs}
+
+\end{document}

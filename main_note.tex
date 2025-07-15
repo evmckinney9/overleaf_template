@@ -1,0 +1,107 @@
+%%% Adapted from https://github.com/gecrooks/on_gates/blob/master/on_gates_src/
+
+\documentclass[10pt,twoside]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm, mathtools}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{quantikz}
+\usepackage{adjustbox}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{sectsty}
+\usepackage{mathpazo} % Palatino-like serif font
+
+% ===== Metadata =====
+\newcommand{\thetitle}{Quantum Circuit Notes}
+\newcommand{\theauthor}{Evan McKinney}
+\newcommand{\thedate}{\today}
+% \newcommand{\thepreprint}{
+%   Technical Note v0.1 \\
+%   \url{https://internal-notes.example.org}
+% }
+
+% ===== Color Palette =====
+\definecolor{SectionRed}{HTML}{7C1C1C}
+\definecolor{LinkBlue}{HTML}{2E4A7D}
+\definecolor{URLGray}{HTML}{555555}
+
+% ===== Hyperref Colors =====
+\hypersetup{
+  pdftitle={\thetitle},
+  pdfauthor={\theauthor},
+  colorlinks=true,
+  linkcolor=LinkBlue,
+  citecolor=LinkBlue,
+  urlcolor=URLGray
+}
+
+% ===== Headers & Footers =====
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LE,RO]{\thetitle}
+\fancyhead[RE,LO]{\theauthor}
+\fancyfoot[C]{\thepage}
+
+% ===== Section Fonts =====
+\sectionfont{\color{SectionRed}\normalfont\Large\bfseries}
+\subsectionfont{\color{SectionRed}\normalfont\large\bfseries}
+\subsubsectionfont{\color{SectionRed}\normalfont\normalsize\bfseries}
+
+% ===== Title Block =====
+\makeatletter
+\renewcommand{\maketitle}{
+  \begin{center}
+    {\LARGE \bfseries \thetitle \par}
+    \vskip 1em
+    {\large \theauthor \par}
+    \vskip 0.5em
+    {\normalsize \thedate \par}
+    \vskip 1em
+  \end{center}
+}
+\makeatother
+
+% ===== Document =====
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\clearpage
+
+% ========== SECTION 1 ==========
+\section{Euler Angle Identity for Single Qubit Rotations}
+
+Let \( R_x(\theta) = e^{-i \theta X / 2} \), etc.
+
+\[
+R_z(\alpha) R_y(\beta) R_z(\gamma) =
+\begin{pmatrix}
+e^{-i(\alpha+\gamma)/2} \cos(\beta/2) & -e^{-i(\alpha-\gamma)/2} \sin(\beta/2) \\
+e^{i(\alpha-\gamma)/2} \sin(\beta/2) & e^{i(\alpha+\gamma)/2} \cos(\beta/2)
+\end{pmatrix}
+\]
+
+This decomposition is exact for all single-qubit unitaries up to global phase.
+
+% ========== SECTION 2 ==========
+\section{CZ from XX Gates via Local Rotations}
+
+\[
+\text{CZ} = (H \otimes I) \cdot XX(\tfrac{\pi}{4}) \cdot (H \otimes I)
+\]
+
+\begin{figure}[h]
+  \centering
+  \begin{quantikz}
+    \lstick{$\ket{q_0}$} & \gate{H} & \ctrl{1} & \gate{H} & \qw \\
+    \lstick{$\ket{q_1}$} & \qw      & \gate{X} & \qw      & \qw
+  \end{quantikz}
+  \caption{Constructing CZ from XX interaction and local basis change.}
+\end{figure}
+
+\end{document}
